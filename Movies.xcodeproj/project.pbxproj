@@ -33,6 +33,20 @@
 			remoteGlobalIDString = 208C2E6724587C2B006AA6CF;
 			remoteInfo = Movies;
 		};
+		208C2EC7245883BC006AA6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 208C2EC2245883BB006AA6CF /* NetworkClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 208C2EA8245883BA006AA6CF;
+			remoteInfo = NetworkClient;
+		};
+		208C2EC9245883BC006AA6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 208C2EC2245883BB006AA6CF /* NetworkClient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 208C2EB1245883BB006AA6CF;
+			remoteInfo = NetworkClientTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +65,7 @@
 		208C2E8C24587C2D006AA6CF /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		208C2E9024587C2D006AA6CF /* MoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUITests.swift; sourceTree = "<group>"; };
 		208C2E9224587C2D006AA6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		208C2EC2245883BB006AA6CF /* NetworkClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkClient.xcodeproj; path = NetworkClient/NetworkClient.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,7 @@
 		208C2E5F24587C2B006AA6CF = {
 			isa = PBXGroup;
 			children = (
+				208C2EC2245883BB006AA6CF /* NetworkClient.xcodeproj */,
 				208C2E6A24587C2B006AA6CF /* Movies */,
 				208C2E8424587C2D006AA6CF /* MoviesTests */,
 				208C2E8F24587C2D006AA6CF /* MoviesUITests */,
@@ -129,6 +145,15 @@
 				208C2E9224587C2D006AA6CF /* Info.plist */,
 			);
 			path = MoviesUITests;
+			sourceTree = "<group>";
+		};
+		208C2EC3245883BB006AA6CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				208C2EC8245883BC006AA6CF /* NetworkClient.framework */,
+				208C2ECA245883BC006AA6CF /* NetworkClientTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +246,12 @@
 			mainGroup = 208C2E5F24587C2B006AA6CF;
 			productRefGroup = 208C2E6924587C2B006AA6CF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 208C2EC3245883BB006AA6CF /* Products */;
+					ProjectRef = 208C2EC2245883BB006AA6CF /* NetworkClient.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				208C2E6724587C2B006AA6CF /* Movies */,
@@ -229,6 +260,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		208C2EC8245883BC006AA6CF /* NetworkClient.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = NetworkClient.framework;
+			remoteRef = 208C2EC7245883BC006AA6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		208C2ECA245883BC006AA6CF /* NetworkClientTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkClientTests.xctest;
+			remoteRef = 208C2EC9245883BC006AA6CF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		208C2E6624587C2B006AA6CF /* Resources */ = {
