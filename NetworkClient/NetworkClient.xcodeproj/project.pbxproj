@@ -14,6 +14,7 @@
 		2037AB192459C7B200B0EEB9 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037AB182459C7B200B0EEB9 /* Parser.swift */; };
 		2037AB1B2459F1A700B0EEB9 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037AB1A2459F1A700B0EEB9 /* JsonParser.swift */; };
 		2037AB242459F46700B0EEB9 /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037AB232459F46700B0EEB9 /* MoviesResponse.swift */; };
+		2085D751245AE5B900EBA3D5 /* JsonParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085D750245AE5B900EBA3D5 /* JsonParserTests.swift */; };
 		208C2EB2245883BB006AA6CF /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208C2EA8245883BA006AA6CF /* NetworkClient.framework */; };
 		208C2EB7245883BB006AA6CF /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C2EB6245883BB006AA6CF /* NetworkClientTests.swift */; };
 		208C2EB9245883BB006AA6CF /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 208C2EAB245883BB006AA6CF /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +43,7 @@
 		2037AB182459C7B200B0EEB9 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		2037AB1A2459F1A700B0EEB9 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		2037AB232459F46700B0EEB9 /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
+		2085D750245AE5B900EBA3D5 /* JsonParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParserTests.swift; sourceTree = "<group>"; };
 		208C2EA8245883BA006AA6CF /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		208C2EAB245883BB006AA6CF /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
 		208C2EAC245883BB006AA6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				208C2EB6245883BB006AA6CF /* NetworkClientTests.swift */,
 				208C2EB8245883BB006AA6CF /* Info.plist */,
+				2085D750245AE5B900EBA3D5 /* JsonParserTests.swift */,
 			);
 			path = NetworkClientTests;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2085D751245AE5B900EBA3D5 /* JsonParserTests.swift in Sources */,
 				208C2EB7245883BB006AA6CF /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
