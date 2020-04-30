@@ -12,6 +12,7 @@ public struct Movie {
 let popularity: Float
 let voteCount: Int
 let poster: String?
+let id: Int
 let adult: Bool
 let backdrop: String?
 let title: String
@@ -25,6 +26,7 @@ enum CodingKeys: String, CodingKey {
   case popularity
   case voteCount = "vote_count"
   case poster = "poster_path"
+  case id
   case adult
   case backdrop = "backdrop_path"
   case title
@@ -38,6 +40,7 @@ public init(from decoder: Decoder) throws {
   popularity = try values.decode(Float.self, forKey: .popularity)
   voteCount = try values.decode(Int.self, forKey: .voteCount)
   poster = try values.decodeIfPresent(String.self, forKey: .poster)
+  id = try values.decode(Int.self, forKey: .id)
   adult = try values.decode(Bool.self, forKey: .adult)
   backdrop = try values.decodeIfPresent(String.self, forKey: .backdrop)
   title = try values.decode(String.self, forKey: .title)
