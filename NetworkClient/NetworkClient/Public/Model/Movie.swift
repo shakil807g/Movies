@@ -9,16 +9,16 @@
 import Foundation
 
 public struct Movie {
-let popularity: Float
-let voteCount: Int
-let poster: String?
-let id: Int
-let adult: Bool
-let backdrop: String?
-let title: String
-let averageVote: Float
-let overview: String
-let releaseDate: Date?
+public let popularity: Float
+public let voteCount: Int
+public let poster: String?
+public let id: Int
+public let adult: Bool
+public let backdrop: String?
+public let title: String
+public let averageVote: Float
+public let overview: String
+public let releaseDate: Date?
 }
 
 extension Movie: Decodable {
