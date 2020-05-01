@@ -10,4 +10,6 @@ import Foundation
 
 public protocol MoviesService {
 func getPopular(completion: @escaping(Result<[Movie], Error>) -> Void)
+func getTopRated(completion: @escaping(Result<[Movie], Error>) -> Void)
+func getUpComing(completion: @escaping(Result<[Movie], Error>) -> Void)
 }

@@ -11,7 +11,7 @@ import Foundation
 enum Router {
 case getPopular
 case getTopRated
-case getUpcoming
+case getUpComing
 }
 //https://api.themoviedb.org/3/movie/popular?api_key=52d78a6d4567271b1e33f4b97134ee11&language=en-US&page=1
 //https://api.themoviedb.org/3/movie/top_rated?api_key=52d78a6d4567271b1e33f4b97134ee11&language=en-US&page=1
@@ -25,7 +25,7 @@ private var path: String {
     return "popular"
   case .getTopRated:
     return "top_rated"
-  case .getUpcoming:
+  case .getUpComing:
     return "upcoming"
   }
 }

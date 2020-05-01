@@ -10,5 +10,5 @@ import Combine
 import Foundation
 
 protocol ListViewModelLoadingOutput {
-var moviesSections: AnyPublisher<MovieSection, Never> { get }
+var moviesSections: AnyPublisher<[MovieSection], Never> { get }
 }

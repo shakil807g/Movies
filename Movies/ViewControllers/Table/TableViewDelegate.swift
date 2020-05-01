@@ -13,15 +13,15 @@ import UIKit
 final class TableViewDelegate: NSObject, UITableViewDelegate {
   
 private var cancelables = Set<AnyCancellable>()
-private var moviesSection = [MovieSection]()
+private var moviesSections = [MovieSection]()
 
 init(listViewModelLoadingOutput: ListViewModelLoadingOutput) {
   super.init()
   subscribe(listViewModelLoadingOutput: listViewModelLoadingOutput)
 }
 private func subscribe(listViewModelLoadingOutput: ListViewModelLoadingOutput) {
-  listViewModelLoadingOutput.moviesSections.sink { movieSection in
-    self.moviesSection.append(movieSection)
+  listViewModelLoadingOutput.moviesSections.sink { movieSections in
+//    self.moviesSection.append(movieSection)
   }.store(in: &cancelables)
 }
 }

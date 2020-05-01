@@ -20,8 +20,17 @@ init(session: URLSessionProtocol, parser: Parser) {
 }
   
 func getPopular(completion: @escaping (Result<[Movie], Error>) -> Void) {
+  perform(router: Router.getPopular, completion: completion)
+}
+func getTopRated(completion: @escaping(Result<[Movie], Error>) -> Void) {
+  perform(router: Router.getTopRated, completion: completion)
+}
+func getUpComing(completion: @escaping(Result<[Movie], Error>) -> Void) {
+  perform(router: Router.getUpComing, completion: completion)
+}
+private func perform(router: Router, completion: @escaping(Result<[Movie], Error>) -> Void) {
   do {
-    let request = try Router.getPopular.urlRequest()
+    let request = try router.urlRequest()
     perform(request: request, completion: completion)
   } catch {
     DispatchQueue.main.async {
@@ -29,7 +38,6 @@ func getPopular(completion: @escaping (Result<[Movie], Error>) -> Void) {
     }
   }
 }
-  
 private func perform(request: URLRequest, completion: @escaping (Result<[Movie], Error>) -> Void) {
   let task = session.dataTask(with: request) { [weak self] data, response, error in
     guard let self = self else { return }
