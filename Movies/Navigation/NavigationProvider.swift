@@ -6,8 +6,9 @@
 //  Copyright © 2020 Example. All rights reserved.
 //
 
+import NetworkClient
 import Foundation
 
 protocol NavigationProvider {
-  
+func showMovieDetail(movie: Movie)
 }

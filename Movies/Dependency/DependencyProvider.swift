@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DependencyProvider {
-func resolve(for viewController: MoviesViewController)
+func resolve(for viewController: MoviesViewController, selectionDelegate: SelectionDelegate?)
 }

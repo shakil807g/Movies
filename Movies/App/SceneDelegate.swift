@@ -11,7 +11,7 @@ import UIKit
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 var window: UIWindow?
-private let appNavigation: NavigationProvider = AppNavigation()
+private var appNavigation: NavigationProvider?
 private let dependencyManager: DependencyProvider = DependencyManager()
 
 func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -21,6 +21,8 @@ private func configureFirstScreen() {
   guard
     let navigationController = window?.rootViewController as? UINavigationController,
     let moviesViewController = navigationController.viewControllers.first as? MoviesViewController else { return }
-  dependencyManager.resolve(for: moviesViewController)
+  let navigation = AppNavigation(navigationController: navigationController)
+  appNavigation = navigation
+  dependencyManager.resolve(for: moviesViewController, selectionDelegate: navigation)
 }
 } // class SceneDelegate

@@ -10,10 +10,10 @@ import NetworkClient
 import Foundation
 
 final class DependencyManager: DependencyProvider {
-func resolve(for viewController: MoviesViewController) {
+func resolve(for viewController: MoviesViewController, selectionDelegate: SelectionDelegate?) {
   let viewModel: ListViewModelProvider = ListViewModel(moviesService: getService())
   viewController.viewModel = viewModel
-  let delegate = TableViewDelegate(listViewModelLoadingOutput: viewModel)
+  let delegate = TableViewDelegate(listViewModelLoadingOutput: viewModel, selectionDelegate: selectionDelegate)
   let dataSource = TableViewDataSource(listViewModelLoadingOutput: viewModel)
   viewController.tableViewDelegate = delegate
   viewController.tableViewDataSource = dataSource
