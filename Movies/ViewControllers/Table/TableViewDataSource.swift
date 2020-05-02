@@ -29,7 +29,9 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
   
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
   let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
-  cell.textLabel?.text = moviesSections[indexPath.section].movies[indexPath.row].title
+  if let movieCell = cell as? MovieTableViewCell {
+    configure(movieCell: movieCell, movie: moviesSections[indexPath.section].movies[indexPath.row])
+  }
   return cell
 }
   
@@ -42,5 +44,7 @@ private func subscribe(listViewModelLoadingOutput: ListViewModelLoadingOutput) {
     self.moviesSections = moviesSections
   }.store(in: &cancelables)
 }
+private func configure(movieCell: MovieTableViewCell, movie: Movie) {
   
+}
 }

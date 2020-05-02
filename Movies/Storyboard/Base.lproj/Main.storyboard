@@ -31,22 +31,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cv7-fN-5NW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="210" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cv7-fN-5NW">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movieCell" id="nG9-DF-oAE">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="movieCell" id="nG9-DF-oAE" customClass="MovieTableViewCell" customModule="Movies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nG9-DF-oAE" id="VN6-Hv-tag">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mSQ-tO-kQU">
+                                                    <rect key="frame" x="10" y="5" width="394" height="200"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfK-ok-Shi">
+                                                    <rect key="frame" x="20" y="15" width="49.5" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="KEc-ch-l7W"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVa-Dg-8de">
+                                                    <rect key="frame" x="353" y="24" width="41" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="X9j-40-pOY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="mSQ-tO-kQU" secondAttribute="trailing" constant="10" id="3VO-Wn-pWO"/>
+                                                <constraint firstItem="DfK-ok-Shi" firstAttribute="top" secondItem="VN6-Hv-tag" secondAttribute="top" constant="15" id="3lM-ed-YLE"/>
+                                                <constraint firstAttribute="trailing" secondItem="kVa-Dg-8de" secondAttribute="trailing" constant="20" id="5lX-Zq-dQX"/>
+                                                <constraint firstItem="mSQ-tO-kQU" firstAttribute="top" secondItem="VN6-Hv-tag" secondAttribute="top" constant="5" id="MCa-Wq-ZIx"/>
+                                                <constraint firstAttribute="bottom" secondItem="mSQ-tO-kQU" secondAttribute="bottom" constant="5" id="Xmp-Bn-OHT"/>
+                                                <constraint firstItem="DfK-ok-Shi" firstAttribute="leading" secondItem="VN6-Hv-tag" secondAttribute="leading" constant="20" id="cZY-uL-KaN"/>
+                                                <constraint firstItem="kVa-Dg-8de" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DfK-ok-Shi" secondAttribute="trailing" constant="283.5" id="vBN-I6-7wQ"/>
+                                                <constraint firstItem="mSQ-tO-kQU" firstAttribute="leading" secondItem="VN6-Hv-tag" secondAttribute="leading" constant="10" id="yRs-xe-14g"/>
+                                                <constraint firstItem="kVa-Dg-8de" firstAttribute="top" secondItem="VN6-Hv-tag" secondAttribute="top" constant="24" id="yjH-R4-M6h"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="bannerImageView" destination="mSQ-tO-kQU" id="l6H-US-4pz"/>
+                                            <outlet property="dateLabel" destination="kVa-Dg-8de" id="NS6-xS-rzB"/>
+                                            <outlet property="nameLabel" destination="DfK-ok-Shi" id="A60-XW-Qz0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Cv7-fN-5NW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9d6-BN-fPq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cv7-fN-5NW" secondAttribute="trailing" id="B1M-Pi-NiV"/>
