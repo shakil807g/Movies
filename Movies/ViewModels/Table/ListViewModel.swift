@@ -29,6 +29,7 @@ init(moviesService: MoviesService) {
   self.moviesService = moviesService
 }
 func loadMovies() {
+  getConfiguration()
   getPopular()
   getTopRated()
   getUpComing()
@@ -74,6 +75,13 @@ private func getUpComing() {
     case .success(let movies):
       self.moviesSectionsArray.append(MovieSection(sectionName: "Up Coming", movies: movies.map { $0.toMovie() }))
     }
+  }
+}
+private func getConfiguration() {
+  dispatchGroup.enter()
+  moviesService.getConfiguration { [weak self] _ in
+    guard let self = self else { return }
+    self.dispatchGroup.leave()
   }
 }
 private func onError(error: Error) {

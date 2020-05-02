@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Parser {
-func parse(_ data: Data) throws -> MoviesResponse
+func parse<T: Decodable>(_ data: Data) throws -> T
 }

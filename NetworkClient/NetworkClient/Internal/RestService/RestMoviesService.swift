@@ -13,12 +13,35 @@ final class MoviesRestService: MoviesService {
 private let session: URLSessionProtocol
 private let parser: Parser
 private var tasks = [URLSessionDataTaskProtocol]()
+private var configuration: Configuration?
   
 init(session: URLSessionProtocol, parser: Parser) {
   self.session = session
   self.parser = parser
 }
-  
+func getConfiguration(completion: @escaping(Result<Void, Error>) -> Void) {
+  do {
+    let request = try Router.getConfiguration.urlRequest()
+    perform(request: request) { (result: Result<Configuration, Error>) in
+      let configurationResult: Result<Void, Error>
+      switch result {
+      case .failure(let error):
+        configurationResult = .failure(error)
+      case .success(let configuration):
+        configurationResult = .success(())
+        self.configuration = configuration
+      }
+      DispatchQueue.main.async {
+        completion(configurationResult)
+      }
+    }
+  }
+  catch {
+    DispatchQueue.main.async {
+      completion(.failure(error))
+    }
+  }
+}
 func getPopular(completion: @escaping (Result<[MovieItem], Error>) -> Void) {
   perform(router: Router.getPopular, completion: completion)
 }
@@ -31,14 +54,25 @@ func getUpComing(completion: @escaping(Result<[MovieItem], Error>) -> Void) {
 private func perform(router: Router, completion: @escaping(Result<[MovieItem], Error>) -> Void) {
   do {
     let request = try router.urlRequest()
-    perform(request: request, completion: completion)
+    perform(request: request) { (result: Result<MoviesResponse, Error>) in
+      let moviesResult: Result<[MovieItem], Error>
+      switch result {
+      case .failure(let error):
+        moviesResult = .failure(error)
+      case .success(let moviesResponse):
+        moviesResult = .success(moviesResponse.results)
+      }
+      DispatchQueue.main.async {
+        completion(moviesResult)
+      }
+    }
   } catch {
     DispatchQueue.main.async {
       completion(.failure(error))
     }
   }
 }
-private func perform(request: URLRequest, completion: @escaping (Result<[MovieItem], Error>) -> Void) {
+  private func perform<T: Decodable>(request: URLRequest, completion: @escaping (Result<T, Error>) -> Void) {
   let task = session.dataTask(with: request) { [weak self] data, response, error in
     guard let self = self else { return }
     if let error = error {
@@ -53,10 +87,10 @@ private func perform(request: URLRequest, completion: @escaping (Result<[MovieIt
       }
       return
     }
-    let result: Result<[MovieItem], Error>
+    let result: Result<T, Error>
     do {
-      let moviesResponse = try self.parser.parse(data)
-      result = .success(moviesResponse.results)
+      let response: T = try self.parser.parse(data)
+      result = .success(response)
     } catch {
       result = .failure(error)
     }

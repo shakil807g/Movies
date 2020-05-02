@@ -23,6 +23,8 @@
 		208C2ED424588870006AA6CF /* MovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C2ED324588870006AA6CF /* MovieItem.swift */; };
 		208C2ED724588F13006AA6CF /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C2ED624588F13006AA6CF /* DateFormatter.swift */; };
 		208C2EDA24589010006AA6CF /* RestMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C2ED924589010006AA6CF /* RestMoviesService.swift */; };
+		20F374B2245D78F700F83E95 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F374B1245D78F700F83E95 /* Configuration.swift */; };
+		20F374B4245D79C200F83E95 /* ImagesConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F374B3245D79C200F83E95 /* ImagesConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		208C2ED324588870006AA6CF /* MovieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItem.swift; sourceTree = "<group>"; };
 		208C2ED624588F13006AA6CF /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		208C2ED924589010006AA6CF /* RestMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMoviesService.swift; sourceTree = "<group>"; };
+		20F374B1245D78F700F83E95 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		20F374B3245D79C200F83E95 /* ImagesConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		2037AB222459F45600B0EEB9 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				20F374B1245D78F700F83E95 /* Configuration.swift */,
+				20F374B3245D79C200F83E95 /* ImagesConfiguration.swift */,
 				2037AB232459F46700B0EEB9 /* MoviesResponse.swift */,
 			);
 			path = Response;
@@ -314,6 +320,8 @@
 				202C643A24594B8700A3DCC5 /* NetworkClientError.swift in Sources */,
 				2037AB242459F46700B0EEB9 /* MoviesResponse.swift in Sources */,
 				208C2ECE245887F2006AA6CF /* NetworkClient.swift in Sources */,
+				20F374B2245D78F700F83E95 /* Configuration.swift in Sources */,
+				20F374B4245D79C200F83E95 /* ImagesConfiguration.swift in Sources */,
 				2037AB13245992FC00B0EEB9 /* URLSessionProtocol.swift in Sources */,
 				208C2ED424588870006AA6CF /* MovieItem.swift in Sources */,
 				202C6438245947BA00A3DCC5 /* Router.swift in Sources */,
