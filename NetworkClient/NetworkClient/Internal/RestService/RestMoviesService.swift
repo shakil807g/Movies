@@ -12,12 +12,46 @@ final class MoviesRestService: MoviesService {
   
 private let session: URLSessionProtocol
 private let parser: Parser
+private let cache = NSCache<NSURL, NSData>()
 private var tasks = [URLSessionDataTaskProtocol]()
 private var configuration: Configuration?
   
 init(session: URLSessionProtocol, parser: Parser) {
   self.session = session
   self.parser = parser
+}
+func getImageData(for movieItem: MovieItem, completion: @escaping(Result<Data, Error>) -> Void) {
+  guard let url = configuration?.getImageURL(movie: movieItem) else {
+    DispatchQueue.main.async {
+      completion(.failure(NetworkClientError.urlCreationFailed))
+    }
+    return
+  }
+  if let data = cache.object(forKey: url as NSURL) {
+    DispatchQueue.main.async {
+      completion(.success(data as Data))
+    }
+    return
+  }
+  let task = session.dataTask(with: URLRequest(url: url)) { data, response, error in
+    if let error = error {
+      DispatchQueue.main.async {
+        completion(.failure(error))
+      }
+    }
+    guard let data = data else {
+      DispatchQueue.main.async {
+        completion(.failure(NetworkClientError.noData))
+      }
+      return
+    }
+    self.cache.setObject(data as NSData, forKey: url as NSURL)
+    DispatchQueue.main.async {
+      completion(.success(data))
+    }
+  }
+  task.resume()
+  tasks.append(task)
 }
 func getConfiguration(completion: @escaping(Result<Void, Error>) -> Void) {
   do {
@@ -89,8 +123,8 @@ private func perform(router: Router, completion: @escaping(Result<[MovieItem], E
     }
     let result: Result<T, Error>
     do {
-      let response: T = try self.parser.parse(data)
-      result = .success(response)
+      let decodedResponse: T = try self.parser.parse(data)
+      result = .success(decodedResponse)
     } catch {
       result = .failure(error)
     }

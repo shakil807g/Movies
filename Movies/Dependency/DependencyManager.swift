@@ -14,7 +14,7 @@ func resolve(for viewController: MoviesViewController, selectionDelegate: Select
   let viewModel: ListViewModelProvider = ListViewModel(moviesService: getService())
   viewController.viewModel = viewModel
   let delegate = TableViewDelegate(listViewModelLoadingOutput: viewModel, selectionDelegate: selectionDelegate)
-  let dataSource = TableViewDataSource(listViewModelLoadingOutput: viewModel)
+  let dataSource = TableViewDataSource(listViewModelLoadingOutput: viewModel, listViewModelInput: viewModel)
   viewController.tableViewDelegate = delegate
   viewController.tableViewDataSource = dataSource
 }

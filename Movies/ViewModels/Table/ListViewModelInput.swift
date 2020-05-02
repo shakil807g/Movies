@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol ListViewModelInput {
+protocol ListViewModelInput: class {
 func loadMovies()
+func loadMovieImage(movie: Movie, completion: @escaping(Data?) -> Void)
 }

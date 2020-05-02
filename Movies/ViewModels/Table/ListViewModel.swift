@@ -28,6 +28,18 @@ var errorMessage: AnyPublisher<String, Never> {
 init(moviesService: MoviesService) {
   self.moviesService = moviesService
 }
+func loadMovieImage(movie: Movie, completion: @escaping (Data?) -> Void) {
+  moviesService.getImageData(for: movie.toMovieItem()) { result in
+    var data: Data?
+    switch result {
+    case .failure(let error):
+      self.onError(error: error)
+    case .success(let loadedData):
+      data = loadedData
+    }
+    completion(data)
+  }
+}
 func loadMovies() {
   getConfiguration()
   getPopular()

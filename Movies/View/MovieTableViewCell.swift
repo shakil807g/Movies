@@ -18,4 +18,9 @@ override func awakeFromNib() {
   super.awakeFromNib()
   bannerImageView.layer.cornerRadius = 10
 }
+override func prepareForReuse() {
+  bannerImageView.image = nil
+  nameLabel.text = nil
+  dateLabel.text = nil
+}
 }

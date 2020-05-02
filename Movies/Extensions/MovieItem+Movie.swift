@@ -23,3 +23,9 @@ func toMovie() -> Movie {
         releaseDate: releaseDate)
 }
 }
+
+extension Movie {
+func toMovieItem() -> MovieItem {
+  MovieItem(popularity: popularity, voteCount: voteCount, poster: poster, id: id, adult: adult, backdrop: backdrop, title: title, averageVote: averageVote, overview: overview, releaseDate: releaseDate)
+}
+}

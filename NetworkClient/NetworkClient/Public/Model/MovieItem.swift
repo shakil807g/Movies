@@ -19,6 +19,18 @@ public let title: String
 public let averageVote: Float
 public let overview: String
 public let releaseDate: Date?
+public init(popularity: Float, voteCount: Int, poster: String?, id: Int, adult: Bool, backdrop: String?, title: String, averageVote: Float, overview: String, releaseDate: Date?) {
+  self.popularity = popularity
+  self.voteCount = voteCount
+  self.poster = poster
+  self.id = id
+  self.adult = adult
+  self.backdrop = backdrop
+  self.title = title
+  self.averageVote = averageVote
+  self.overview = overview
+  self.releaseDate = releaseDate
+}
 }
 
 extension MovieItem: Decodable {
