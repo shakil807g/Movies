@@ -46,7 +46,7 @@ private func getPopular() {
     case .failure(let error):
       self.onError(error: error)
     case .success(let movies):
-      self.moviesSectionsArray.append(MovieSection(sectionName: "Popular", movies: movies))
+      self.moviesSectionsArray.append(MovieSection(sectionName: "Popular", movies: movies.map { $0.toMovie() }))
     }
   }
 }
@@ -59,7 +59,7 @@ private func getTopRated() {
     case .failure(let error):
       self.onError(error: error)
     case .success(let movies):
-      self.moviesSectionsArray.append(MovieSection(sectionName: "Top Rated", movies: movies))
+      self.moviesSectionsArray.append(MovieSection(sectionName: "Top Rated", movies: movies.map { $0.toMovie() }))
     }
   }
 }
@@ -72,7 +72,7 @@ private func getUpComing() {
     case .failure(let error):
       self.onError(error: error)
     case .success(let movies):
-      self.moviesSectionsArray.append(MovieSection(sectionName: "Up Coming", movies: movies))
+      self.moviesSectionsArray.append(MovieSection(sectionName: "Up Coming", movies: movies.map { $0.toMovie() }))
     }
   }
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Example. All rights reserved.
 //
 
-import NetworkClient
 import UIKit
 import Foundation
 

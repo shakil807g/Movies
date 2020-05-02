@@ -1,5 +1,5 @@
 //
-//  Movie.swift
+//  MovieItem.swift
 //  NetworkClient
 //
 //  Created by Khurram on 28/04/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Movie {
+public struct MovieItem {
 public let popularity: Float
 public let voteCount: Int
 public let poster: String?
@@ -21,7 +21,7 @@ public let overview: String
 public let releaseDate: Date?
 }
 
-extension Movie: Decodable {
+extension MovieItem: Decodable {
 enum CodingKeys: String, CodingKey {
   case popularity
   case voteCount = "vote_count"
