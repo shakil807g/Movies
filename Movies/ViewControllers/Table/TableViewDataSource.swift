@@ -16,8 +16,7 @@ private var cancelables = Set<AnyCancellable>()
 private var moviesSections = [MovieSection]()
 private let dateFormatter: DateFormatter = {
   let formatter = DateFormatter()
-  formatter.dateStyle = .medium
-  formatter.timeStyle = .none
+  formatter.dateFormat = "MMM yyyy"
   return formatter
 }()
 private weak var listViewModelInput: ListViewModelInput?
