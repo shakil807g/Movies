@@ -22,33 +22,23 @@ init(session: URLSessionProtocol, parser: Parser) {
 }
 func getImageData(for movieItem: MovieItem, completion: @escaping(Result<Data, Error>) -> Void) {
   guard let url = configuration?.getImageURL(movie: movieItem) else {
-    DispatchQueue.main.async {
-      completion(.failure(NetworkClientError.urlCreationFailed))
-    }
+    completion(.failure(NetworkClientError.urlCreationFailed))
     return
   }
   if let data = cache.object(forKey: url as NSURL) {
-    DispatchQueue.main.async {
-      completion(.success(data as Data))
-    }
+    completion(.success(data as Data))
     return
   }
   let task = session.dataTask(with: URLRequest(url: url)) { data, response, error in
     if let error = error {
-      DispatchQueue.main.async {
-        completion(.failure(error))
-      }
+      completion(.failure(error))
     }
     guard let data = data else {
-      DispatchQueue.main.async {
-        completion(.failure(NetworkClientError.noData))
-      }
+      completion(.failure(NetworkClientError.noData))
       return
     }
     self.cache.setObject(data as NSData, forKey: url as NSURL)
-    DispatchQueue.main.async {
-      completion(.success(data))
-    }
+    completion(.success(data))
   }
   task.resume()
   tasks.append(task)

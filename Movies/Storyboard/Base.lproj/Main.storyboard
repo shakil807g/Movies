@@ -85,6 +85,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ptZ-hJ-7eQ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lri-KJ-Mxq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -105,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Detail View Controller-->
         <scene sceneID="PnH-tq-vVQ">
             <objects>
-                <viewController storyboardIdentifier="movieDetailViewController" id="Q0C-8U-Kuo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="movieDetailViewController" id="Q0C-8U-Kuo" customClass="MovieDetailViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bRc-4e-edG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

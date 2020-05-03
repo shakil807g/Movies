@@ -11,18 +11,14 @@ import UIKit
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 var window: UIWindow?
-private var appNavigation: NavigationProvider?
-private let dependencyManager: DependencyProvider = DependencyManager()
 
 func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+  guard let windowScene = scene as? UIWindowScene else { return }
+  window = UIWindow(windowScene: windowScene)
   configureFirstScreen()
 }
 private func configureFirstScreen() {
-  guard
-    let navigationController = window?.rootViewController as? UINavigationController,
-    let moviesViewController = navigationController.viewControllers.first as? MoviesViewController else { return }
-  let navigation = AppNavigation(navigationController: navigationController)
-  appNavigation = navigation
-  dependencyManager.resolve(for: moviesViewController, selectionDelegate: navigation)
+  window?.rootViewController = MoviesListBuilder().build()
+  window?.makeKeyAndVisible()
 }
 } // class SceneDelegate
