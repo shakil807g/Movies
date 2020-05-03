@@ -24,4 +24,17 @@ func didTriggerViewReadyEvent() {
     self.movieDetailInput?.showMovie(movie: movie)
   }
 }
+func loadMovieImage(movie: Movie, completion: @escaping(Data?) -> Void) {
+  interactorInput.loadMovieImage(movie: movie) { result in
+    switch result {
+    case .failure(let error):
+      if let userMessage = handleError(error) {
+        self.movieDetailInput?.showErrorMessage(errorMessage: userMessage)
+      }
+      completion(nil)
+    case .success(let data):
+      completion(data)
+    }
+  }
+}
 }

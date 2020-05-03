@@ -6,6 +6,7 @@
 //  Copyright © 2020 Example. All rights reserved.
 //
 
+import NetworkClient
 import UIKit
 import Foundation
 
@@ -15,7 +16,7 @@ func build(movie: Movie) -> UIViewController? {
   guard let detailViewController = storyboard.instantiateViewController(identifier: "movieDetailViewController") as? MovieDetailViewController else {
     return nil
   }
-  let interactor = MovieDetailInteractor(movie: movie)
+  let interactor = MovieDetailInteractor(movie: movie, moviesService: getService())
   let presenter = MovieDetailPresenter(interactorInput: interactor)
   detailViewController.movieDetailViewOutput = presenter
   presenter.movieDetailInput = detailViewController

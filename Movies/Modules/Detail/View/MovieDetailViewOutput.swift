@@ -10,4 +10,5 @@ import Foundation
 
 protocol MovieDetailViewOutput {
 func didTriggerViewReadyEvent()
+func loadMovieImage(movie: Movie, completion: @escaping(Data?) -> Void)
 }

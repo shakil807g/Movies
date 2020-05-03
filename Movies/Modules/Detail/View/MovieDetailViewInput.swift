@@ -10,4 +10,5 @@ import Foundation
 
 protocol MovieDetailViewInput: class {
 func showMovie(movie: Movie)
+func showErrorMessage(errorMessage: String)
 }

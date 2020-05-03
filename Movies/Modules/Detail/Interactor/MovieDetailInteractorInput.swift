@@ -10,4 +10,5 @@ import Foundation
 
 protocol MovieDetailInteractorInput {
 func getMovie(completion: @escaping(Movie)->Void)
+func loadMovieImage(movie: Movie, completion: @escaping(Result<Data, Error>) -> Void)
 }
