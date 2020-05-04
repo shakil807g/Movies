@@ -11,13 +11,15 @@ import Foundation
 final class MoviesListPresenter {
   
 private let dispatchGroup = DispatchGroup()
-private let interactorInput: MoviesListInteractorInput
+private let networkInteractorInput: NetworkInteractorInput
+private let persistenceInteractorInput: PersistenceInteractorInput
 private let routerInput: MoviesListRouterInput
 private var moviesSections = [MovieSection]()
 private weak var viewInput: MoviesListViewInput?
   
-init(interactorInput: MoviesListInteractorInput, routerInput: MoviesListRouterInput, viewInput: MoviesListViewInput?) {
-  self.interactorInput = interactorInput
+init(networkInteractorInput: NetworkInteractorInput, persistenceInteractorInput: PersistenceInteractorInput, routerInput: MoviesListRouterInput, viewInput: MoviesListViewInput?) {
+  self.networkInteractorInput = networkInteractorInput
+  self.persistenceInteractorInput = persistenceInteractorInput
   self.routerInput = routerInput
   self.viewInput = viewInput
 }
@@ -26,7 +28,7 @@ init(interactorInput: MoviesListInteractorInput, routerInput: MoviesListRouterIn
 
 extension MoviesListPresenter: MoviesListViewOutput {
 func loadMovieImage(movie: Movie, completion: @escaping (Data?) -> Void) {
-  interactorInput.loadMovieImage(movie: movie) { result in
+  networkInteractorInput.loadMovieImage(movie: movie) { result in
     switch result {
     case .failure(let error):
       if let userMessage = handleError(error) {
@@ -62,13 +64,13 @@ private func loadMovies() {
 }
 private func loadConfiguration() {
   dispatchGroup.enter()
-  interactorInput.loadConfiguration { [weak self] _ in
+  networkInteractorInput.loadConfiguration { [weak self] _ in
     self?.dispatchGroup.leave()
   }
 }
 private func loadPopularMovies(){
   dispatchGroup.enter()
-  interactorInput.loadPopularMovies { [weak self] result in
+  networkInteractorInput.loadPopularMovies { [weak self] result in
     defer { self?.dispatchGroup.leave() }
     guard let self = self else { return }
     switch result {
@@ -77,13 +79,14 @@ private func loadPopularMovies(){
         self.viewInput?.showErrorMessage(errorMessage: userMessage)
       }
     case .success(let movies):
+      self.persistenceInteractorInput.persist(movies: movies)
       self.moviesSections.append(MovieSection(sectionName: NSLocalizedString("Popular", comment: "Popular"), movies: movies))
     }
   }
 }
 private func loadTopRatedMovies(){
   dispatchGroup.enter()
-  interactorInput.loadTopRatedMovies { [weak self] result in
+  networkInteractorInput.loadTopRatedMovies { [weak self] result in
     defer { self?.dispatchGroup.leave() }
     guard let self = self else { return }
     switch result {
@@ -92,13 +95,14 @@ private func loadTopRatedMovies(){
         self.viewInput?.showErrorMessage(errorMessage: userMessage)
       }
     case .success(let movies):
+      self.persistenceInteractorInput.persist(movies: movies)
       self.moviesSections.append(MovieSection(sectionName: NSLocalizedString("Top Rated", comment: "Top Rated"), movies: movies))
     }
   }
 }
 private func loadUpComingMovies(){
   dispatchGroup.enter()
-  interactorInput.loadUpComingMovies { [weak self] result in
+  networkInteractorInput.loadUpComingMovies { [weak self] result in
     defer { self?.dispatchGroup.leave() }
     guard let self = self else { return }
     switch result {
@@ -107,6 +111,7 @@ private func loadUpComingMovies(){
         self.viewInput?.showErrorMessage(errorMessage: userMessage)
       }
     case .success(let movies):
+      self.persistenceInteractorInput.persist(movies: movies)
       self.moviesSections.append(MovieSection(sectionName: NSLocalizedString("Up Coming", comment: "Up Coming"), movies: movies))
     }
   }

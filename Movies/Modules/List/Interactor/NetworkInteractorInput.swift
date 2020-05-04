@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol MoviesListInteractorInput: class {
+protocol NetworkInteractorInput: class {
+
 func loadConfiguration(completion: @escaping(Result<Void, Error>) -> Void)
 func loadPopularMovies(completion: @escaping(Result<[Movie], Error>) -> Void)
 func loadTopRatedMovies(completion: @escaping(Result<[Movie], Error>) -> Void)

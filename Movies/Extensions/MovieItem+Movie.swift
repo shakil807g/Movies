@@ -10,22 +10,19 @@ import NetworkClient
 import Foundation
 
 extension MovieItem {
-func toMovie() -> Movie {
-  Movie(popularity: popularity,
-        voteCount: voteCount,
-        poster: poster,
+  func toMovie(with category: Category) -> Movie {
+  Movie(poster: poster,
         id: id,
-        adult: adult,
         backdrop: backdrop,
         title: title,
-        averageVote: averageVote,
         overview: overview,
-        releaseDate: releaseDate)
+        releaseDate: releaseDate,
+        category: category)
 }
 }
 
 extension Movie {
 func toMovieItem() -> MovieItem {
-  MovieItem(popularity: popularity, voteCount: voteCount, poster: poster, id: id, adult: adult, backdrop: backdrop, title: title, averageVote: averageVote, overview: overview, releaseDate: releaseDate)
+  MovieItem(poster: poster, id: id, backdrop: backdrop, title: title, overview: overview, releaseDate: releaseDate)
 }
 }

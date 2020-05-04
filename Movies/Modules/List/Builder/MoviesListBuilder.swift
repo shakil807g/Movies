@@ -16,12 +16,14 @@ func build() -> UIViewController? {
   let storyboard = UIStoryboard(name: "Main", bundle: nil)
   guard
     let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController,
-    let moviesViewController = navigationController.viewControllers.first as? MoviesViewController else {
+    let moviesViewController = navigationController.viewControllers.first as? MoviesViewController,
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
     return nil
   }
   let router = MoviesListRouter(navigationController: navigationController)
-  let interactor = MoviesListInteractor(moviesService: getService())
-  let presenter = MoviesListPresenter(interactorInput: interactor, routerInput: router, viewInput: moviesViewController)
+  let networkInteractor = NetworkInteractor(moviesService: getService())
+  let persistenceInteractor = PersistenceInteractor(persistence: CoreDataPersistence(persistentContainer: appDelegate.persistentContainer))
+  let presenter = MoviesListPresenter(networkInteractorInput: networkInteractor, persistenceInteractorInput: persistenceInteractor, routerInput: router, viewInput: moviesViewController)
   moviesViewController.moviesListViewOutput = presenter
   return navigationController
 }

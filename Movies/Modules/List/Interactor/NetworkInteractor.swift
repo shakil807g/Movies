@@ -9,7 +9,7 @@
 import NetworkClient
 import Foundation
 
-final class MoviesListInteractor {
+final class NetworkInteractor {
   
 private let moviesService: MoviesService
   
@@ -19,7 +19,7 @@ init(moviesService: MoviesService) {
   
 }
 
-extension MoviesListInteractor: MoviesListInteractorInput {
+extension NetworkInteractor: NetworkInteractorInput {
 func loadConfiguration(completion: @escaping (Result<Void, Error>) -> Void) {
   moviesService.getConfiguration(completion: completion)
 }
@@ -30,7 +30,7 @@ func loadPopularMovies(completion: @escaping(Result<[Movie], Error>) -> Void) {
     case .failure(let error):
       completion(.failure(error))
     case .success(let movies):
-      completion(.success(movies.map { $0.toMovie() }))
+      completion(.success(movies.map { $0.toMovie(with: .popular) }))
     }
   }
 }
@@ -41,7 +41,7 @@ func loadTopRatedMovies(completion: @escaping(Result<[Movie], Error>) -> Void) {
     case .failure(let error):
       completion(.failure(error))
     case .success(let movies):
-      completion(.success(movies.map { $0.toMovie() }))
+      completion(.success(movies.map { $0.toMovie(with: .topRated) }))
     }
   }
 }
@@ -52,7 +52,7 @@ func loadUpComingMovies(completion: @escaping(Result<[Movie], Error>) -> Void) {
     case .failure(let error):
       completion(.failure(error))
     case .success(let movies):
-      completion(.success(movies.map { $0.toMovie() }))
+      completion(.success(movies.map { $0.toMovie(with: .upComing) }))
     }
   }
 }

@@ -8,15 +8,12 @@
 
 import Foundation
 
-public struct Movie {
-public let popularity: Float
-public let voteCount: Int
-public let poster: String?
-public let id: Int
-public let adult: Bool
-public let backdrop: String?
-public let title: String
-public let averageVote: Float
-public let overview: String
-public let releaseDate: Date?
+struct Movie {
+let poster: String?
+let id: Int
+let backdrop: String?
+let title: String
+let overview: String
+let releaseDate: Date?
+let category: Category
 }
