@@ -11,6 +11,8 @@ import NetworkClient
 
 final class MockService: MoviesService {
   
+var returnImageDataError = false
+  
 func getConfiguration(completion: @escaping (Result<Void, Error>) -> Void) {
   
 }
@@ -29,7 +31,11 @@ func getUpComing(completion: @escaping (Result<[MovieItem], Error>) -> Void) {
 
 func getImageData(for movieItem: MovieItem, completion: @escaping (Result<Data, Error>) -> Void) {
   DispatchQueue.main.async {
-    completion(.success(Data()))
+    if self.returnImageDataError {
+      completion(.failure(NSError()))
+    } else {
+      completion(.success(Data()))
+    }
   }
 }
   
