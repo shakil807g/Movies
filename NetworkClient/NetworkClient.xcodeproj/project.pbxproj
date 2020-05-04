@@ -21,7 +21,6 @@
 		205FCDFD246008EA0025108C /* defaultExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCDFC246008EA0025108C /* defaultExpectation.swift */; };
 		2085D751245AE5B900EBA3D5 /* JsonParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085D750245AE5B900EBA3D5 /* JsonParserTests.swift */; };
 		208C2EB2245883BB006AA6CF /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208C2EA8245883BA006AA6CF /* NetworkClient.framework */; };
-		208C2EB7245883BB006AA6CF /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C2EB6245883BB006AA6CF /* NetworkClientTests.swift */; };
 		208C2EB9245883BB006AA6CF /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 208C2EAB245883BB006AA6CF /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		208C2ECE245887F2006AA6CF /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C2ECD245887F2006AA6CF /* NetworkClient.swift */; };
 		208C2ED024588833006AA6CF /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C2ECF24588833006AA6CF /* MoviesService.swift */; };
@@ -60,7 +59,6 @@
 		208C2EAB245883BB006AA6CF /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
 		208C2EAC245883BB006AA6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208C2EB1245883BB006AA6CF /* NetworkClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		208C2EB6245883BB006AA6CF /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		208C2EB8245883BB006AA6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208C2ECD245887F2006AA6CF /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		208C2ECF24588833006AA6CF /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
@@ -93,8 +91,8 @@
 		2037AB142459931A00B0EEB9 /* URLSession */ = {
 			isa = PBXGroup;
 			children = (
-				2037AB12245992FC00B0EEB9 /* URLSessionProtocol.swift */,
 				2037AB152459934200B0EEB9 /* URLSessionDataTaskProtocol.swift */,
+				2037AB12245992FC00B0EEB9 /* URLSessionProtocol.swift */,
 			);
 			path = URLSession;
 			sourceTree = "<group>";
@@ -102,8 +100,8 @@
 		2037AB172459C78E00B0EEB9 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				2037AB182459C7B200B0EEB9 /* Parser.swift */,
 				2037AB1A2459F1A700B0EEB9 /* JsonParser.swift */,
+				2037AB182459C7B200B0EEB9 /* Parser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -154,7 +152,6 @@
 				205FCDFC246008EA0025108C /* defaultExpectation.swift */,
 				208C2EB8245883BB006AA6CF /* Info.plist */,
 				2085D750245AE5B900EBA3D5 /* JsonParserTests.swift */,
-				208C2EB6245883BB006AA6CF /* NetworkClientTests.swift */,
 				205FCDF9246001D30025108C /* RestMovieServiceTests.swift */,
 				205FCDF7245FFEA50025108C /* RouterTests.swift */,
 				205FCDF5245FFDF80025108C /* TestData.swift */,
@@ -175,11 +172,11 @@
 		208C2ECC245887D8006AA6CF /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				2037AB222459F45600B0EEB9 /* Response */,
-				2037AB172459C78E00B0EEB9 /* Parser */,
-				2037AB142459931A00B0EEB9 /* URLSession */,
-				208C2ED824588FF8006AA6CF /* RestService */,
 				208C2ED524588EFF006AA6CF /* Extensions */,
+				2037AB172459C78E00B0EEB9 /* Parser */,
+				2037AB222459F45600B0EEB9 /* Response */,
+				208C2ED824588FF8006AA6CF /* RestService */,
+				2037AB142459931A00B0EEB9 /* URLSession */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 				205FCDF8245FFEA50025108C /* RouterTests.swift in Sources */,
 				205FCDFD246008EA0025108C /* defaultExpectation.swift in Sources */,
 				2085D751245AE5B900EBA3D5 /* JsonParserTests.swift in Sources */,
-				208C2EB7245883BB006AA6CF /* NetworkClientTests.swift in Sources */,
 				205FCDF4245FFC3B0025108C /* ConfigurationTests.swift in Sources */,
 				205FCDF6245FFDF80025108C /* TestData.swift in Sources */,
 			);
