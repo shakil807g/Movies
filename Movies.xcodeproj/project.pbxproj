@@ -213,8 +213,8 @@
 			children = (
 				2039DEFD245DF4A7000FF7C2 /* NetworkInteractor.swift */,
 				2039DEF9245DF41A000FF7C2 /* NetworkInteractorInput.swift */,
-				205FCDEC245FC43E0025108C /* PersistenceInteractorInput.swift */,
 				205FCDEE245FC45E0025108C /* PersistenceInteractor.swift */,
+				205FCDEC245FC43E0025108C /* PersistenceInteractorInput.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -230,8 +230,8 @@
 		2055E5DE245DED88007FEB74 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				2055E5E4245DEEE1007FEB74 /* MoviesListRouterInput.swift */,
 				2055E5E6245DEF38007FEB74 /* MoviesListRouter.swift */,
+				2055E5E4245DEEE1007FEB74 /* MoviesListRouterInput.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -347,12 +347,12 @@
 		208C2E6A24587C2B006AA6CF /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				20793BCB245EDFA10008ADEC /* Persistence */,
 				2085D755245AF37600EBA3D5 /* App */,
 				20F374AA245D4ACA00F83E95 /* Extensions */,
 				203943CB245B3E5A002C4B1A /* HandleError */,
 				20F374A5245D49F000F83E95 /* Model */,
 				2055E5D7245DE8C7007FEB74 /* Modules */,
+				20793BCB245EDFA10008ADEC /* Persistence */,
 				2085D756245AF38100EBA3D5 /* Storyboard */,
 				208C2E7724587C2C006AA6CF /* Assets.xcassets */,
 				208C2E7C24587C2C006AA6CF /* Info.plist */,
@@ -392,8 +392,8 @@
 		20F374A5245D49F000F83E95 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				20F374A8245D4A0200F83E95 /* Movie.swift */,
 				20AF0958245F30D7009445D9 /* Category.swift */,
+				20F374A8245D4A0200F83E95 /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
