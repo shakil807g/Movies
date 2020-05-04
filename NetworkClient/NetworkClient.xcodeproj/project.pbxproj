@@ -17,6 +17,8 @@
 		205FCDF4245FFC3B0025108C /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCDF3245FFC3B0025108C /* ConfigurationTests.swift */; };
 		205FCDF6245FFDF80025108C /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCDF5245FFDF80025108C /* TestData.swift */; };
 		205FCDF8245FFEA50025108C /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCDF7245FFEA50025108C /* RouterTests.swift */; };
+		205FCDFA246001D30025108C /* RestMovieServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCDF9246001D30025108C /* RestMovieServiceTests.swift */; };
+		205FCDFD246008EA0025108C /* defaultExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCDFC246008EA0025108C /* defaultExpectation.swift */; };
 		2085D751245AE5B900EBA3D5 /* JsonParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085D750245AE5B900EBA3D5 /* JsonParserTests.swift */; };
 		208C2EB2245883BB006AA6CF /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208C2EA8245883BA006AA6CF /* NetworkClient.framework */; };
 		208C2EB7245883BB006AA6CF /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C2EB6245883BB006AA6CF /* NetworkClientTests.swift */; };
@@ -51,6 +53,8 @@
 		205FCDF3245FFC3B0025108C /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 		205FCDF5245FFDF80025108C /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		205FCDF7245FFEA50025108C /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		205FCDF9246001D30025108C /* RestMovieServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMovieServiceTests.swift; sourceTree = "<group>"; };
+		205FCDFC246008EA0025108C /* defaultExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultExpectation.swift; sourceTree = "<group>"; };
 		2085D750245AE5B900EBA3D5 /* JsonParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParserTests.swift; sourceTree = "<group>"; };
 		208C2EA8245883BA006AA6CF /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		208C2EAB245883BB006AA6CF /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
@@ -146,12 +150,14 @@
 		208C2EB5245883BB006AA6CF /* NetworkClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				205FCDF3245FFC3B0025108C /* ConfigurationTests.swift */,
+				205FCDFC246008EA0025108C /* defaultExpectation.swift */,
 				208C2EB8245883BB006AA6CF /* Info.plist */,
 				2085D750245AE5B900EBA3D5 /* JsonParserTests.swift */,
 				208C2EB6245883BB006AA6CF /* NetworkClientTests.swift */,
-				205FCDF3245FFC3B0025108C /* ConfigurationTests.swift */,
-				205FCDF5245FFDF80025108C /* TestData.swift */,
+				205FCDF9246001D30025108C /* RestMovieServiceTests.swift */,
 				205FCDF7245FFEA50025108C /* RouterTests.swift */,
+				205FCDF5245FFDF80025108C /* TestData.swift */,
 			);
 			path = NetworkClientTests;
 			sourceTree = "<group>";
@@ -343,7 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205FCDFA246001D30025108C /* RestMovieServiceTests.swift in Sources */,
 				205FCDF8245FFEA50025108C /* RouterTests.swift in Sources */,
+				205FCDFD246008EA0025108C /* defaultExpectation.swift in Sources */,
 				2085D751245AE5B900EBA3D5 /* JsonParserTests.swift in Sources */,
 				208C2EB7245883BB006AA6CF /* NetworkClientTests.swift in Sources */,
 				205FCDF4245FFC3B0025108C /* ConfigurationTests.swift in Sources */,
