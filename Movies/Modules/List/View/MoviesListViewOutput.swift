@@ -12,4 +12,6 @@ protocol MoviesListViewOutput: class {
 func didTriggerViewReadyEvent()
 func didSelectMovie(movie: Movie)
 func loadMovieImage(movie: Movie, completion: @escaping(Data?) -> Void)
+func search(query: String)
+func searchDismissed()
 }

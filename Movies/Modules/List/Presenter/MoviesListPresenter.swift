@@ -48,6 +48,30 @@ func didTriggerViewReadyEvent() {
 func didSelectMovie(movie: Movie) {
   routerInput.showMovieDetails(movie: movie)
 }
+func search(query: String) {
+  persistenceInteractorInput.search(query: query) { [weak self] movies in
+    guard let self = self else { return }
+    var searchedSections = [MovieSection]()
+    let popularMovies = movies.filter { $0.category == .popular }
+    let topRatedMovies = movies.filter { $0.category == .topRated }
+    let upComingMovies = movies.filter { $0.category == .upComing }
+    if !popularMovies.isEmpty {
+      searchedSections.append(MovieSection(sectionName: NSLocalizedString("Popular", comment: "Popular"), movies: popularMovies))
+    }
+    if !topRatedMovies.isEmpty {
+      searchedSections.append(MovieSection(sectionName: NSLocalizedString("Top Rated", comment: "Top Rated"), movies: topRatedMovies))
+    }
+    if !upComingMovies.isEmpty {
+      searchedSections.append(MovieSection(sectionName: NSLocalizedString("Up Coming", comment: "Up Coming"), movies: upComingMovies))
+    }
+    searchedSections.sort()
+    self.viewInput?.showMovies(moviesSections: searchedSections)
+  }
+}
+func searchDismissed() {
+  // show the movies loaded from network
+  viewInput?.showMovies(moviesSections: moviesSections)
+}
 } //extension MoviesListPresenter
 
 extension MoviesListPresenter {

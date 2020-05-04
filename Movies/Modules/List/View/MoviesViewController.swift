@@ -13,6 +13,7 @@ final class MoviesViewController: UIViewController {
 @IBOutlet weak var tableView: UITableView!
 var moviesListViewOutput: MoviesListViewOutput?
 private var moviesSections = [MovieSection]()
+private let searchController = UISearchController(searchResultsController: nil)
 private let dateFormatter: DateFormatter = {
   let formatter = DateFormatter()
   formatter.dateFormat = "MMM yyyy"
@@ -28,7 +29,7 @@ override func viewDidLoad() {
 
 extension MoviesViewController: MoviesListViewInput {
 func setupInitialState() {
-  navigationItem.title = NSLocalizedString("Movies List", comment: "Movies List")
+  confirgureSearch()
 }
 
 func showMovies(moviesSections: [MovieSection]) {
@@ -48,6 +49,14 @@ func showLoading(show: Bool) {
 }
 func showErrorMessage(errorMessage: String) {
   print(errorMessage)
+}
+private func confirgureSearch() {
+  searchController.obscuresBackgroundDuringPresentation = false
+  searchController.searchBar.placeholder = "Search Articles"
+  navigationItem.searchController = searchController
+  navigationItem.hidesSearchBarWhenScrolling = false
+  searchController.searchBar.delegate = self
+  definesPresentationContext = true
 }
 } // extension MoviesViewController
 
@@ -94,3 +103,12 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
   tableView.deselectRow(at: indexPath, animated: true)
 }
 } // extension MoviesViewController
+
+extension MoviesViewController: UISearchBarDelegate {
+func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+  moviesListViewOutput?.search(query: searchBar.text!)
+}
+func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+  moviesListViewOutput?.searchDismissed()
+}
+}
