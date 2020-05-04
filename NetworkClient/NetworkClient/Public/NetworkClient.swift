@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let movieService = MoviesRestService(session: URLSession.shared, parser: JsonParser())
+private let movieService = RestMoviesService(session: URLSession.shared, parser: JsonParser())
 
 public func getService() -> MoviesService {
   movieService

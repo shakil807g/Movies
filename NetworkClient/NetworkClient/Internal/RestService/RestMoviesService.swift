@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class MoviesRestService: MoviesService {
+final class RestMoviesService: MoviesService {
   
 private let session: URLSessionProtocol
 private let parser: Parser
@@ -126,4 +126,4 @@ private func perform(router: Router, completion: @escaping(Result<[MovieItem], E
   tasks.append(task)
 }
   
-} // class MoviesRestService
+} // class class RestMoviesService
