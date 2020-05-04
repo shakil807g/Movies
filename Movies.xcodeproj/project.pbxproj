@@ -26,6 +26,7 @@
 		205FCE0724602F300025108C /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCE0624602F300025108C /* MockService.swift */; };
 		205FCE0924602FF30025108C /* defaultExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCE0824602FF30025108C /* defaultExpectation.swift */; };
 		205FCE0D246035840025108C /* MovieDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCE0C246035840025108C /* MovieDetailPresenterTests.swift */; };
+		205FCE0F246040440025108C /* MovieDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FCE0E246040440025108C /* MovieDetailViewControllerTests.swift */; };
 		20793BB8245EA59E0008ADEC /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20793BB7245EA59E0008ADEC /* MovieDetailViewController.swift */; };
 		20793BBB245EAC680008ADEC /* MovieDetailViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20793BBA245EAC680008ADEC /* MovieDetailViewOutput.swift */; };
 		20793BBD245EACA80008ADEC /* MovieDetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20793BBC245EACA80008ADEC /* MovieDetailViewInput.swift */; };
@@ -115,6 +116,7 @@
 		205FCE0624602F300025108C /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		205FCE0824602FF30025108C /* defaultExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultExpectation.swift; sourceTree = "<group>"; };
 		205FCE0C246035840025108C /* MovieDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenterTests.swift; sourceTree = "<group>"; };
+		205FCE0E246040440025108C /* MovieDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		20793BB7245EA59E0008ADEC /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		20793BBA245EAC680008ADEC /* MovieDetailViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewOutput.swift; sourceTree = "<group>"; };
 		20793BBC245EACA80008ADEC /* MovieDetailViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewInput.swift; sourceTree = "<group>"; };
@@ -269,11 +271,44 @@
 		205FCE0324602D650025108C /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				205FCE00246029E30025108C /* MovieDetailBuilderTests.swift */,
-				205FCE0424602DF40025108C /* MovieDetailInteractorTests.swift */,
-				205FCE0C246035840025108C /* MovieDetailPresenterTests.swift */,
+				205FCE10246042AA0025108C /* Builder */,
+				205FCE11246042B00025108C /* Interactor */,
+				205FCE12246042B60025108C /* Presenter */,
+				205FCE13246042BC0025108C /* View */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		205FCE10246042AA0025108C /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				205FCE00246029E30025108C /* MovieDetailBuilderTests.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		205FCE11246042B00025108C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				205FCE0424602DF40025108C /* MovieDetailInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		205FCE12246042B60025108C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				205FCE0C246035840025108C /* MovieDetailPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		205FCE13246042BC0025108C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				205FCE0E246040440025108C /* MovieDetailViewControllerTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		20793BB5245EA5640008ADEC /* Detail */ = {
@@ -642,6 +677,7 @@
 				205FCE0524602DF40025108C /* MovieDetailInteractorTests.swift in Sources */,
 				205FCE0D246035840025108C /* MovieDetailPresenterTests.swift in Sources */,
 				205FCE01246029E30025108C /* MovieDetailBuilderTests.swift in Sources */,
+				205FCE0F246040440025108C /* MovieDetailViewControllerTests.swift in Sources */,
 				205FCE0924602FF30025108C /* defaultExpectation.swift in Sources */,
 				205FCE0724602F300025108C /* MockService.swift in Sources */,
 			);
