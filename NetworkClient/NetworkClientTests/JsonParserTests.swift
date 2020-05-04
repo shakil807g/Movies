@@ -42,19 +42,15 @@ func testParse() throws {
 """.data(using: .utf8)!
   
   let sut = JsonParser()
-  let moviesResponse = try sut.parse(data)
+  let moviesResponse: MoviesResponse = try sut.parse(data)
   XCTAssertTrue(!moviesResponse.results.isEmpty)
   let movie = moviesResponse.results.first!
-  XCTAssert(movie.popularity == 511.945)
-  XCTAssert(movie.voteCount == 3150)
   XCTAssertNotNil(movie.poster)
   XCTAssertTrue(!movie.poster!.isEmpty)
   XCTAssert(movie.id == 419704)
-  XCTAssertFalse(movie.adult)
   XCTAssertNotNil(movie.backdrop)
   XCTAssertTrue(!movie.backdrop!.isEmpty)
   XCTAssert(movie.title == "Ad Astra")
-  XCTAssert(movie.averageVote == 6)
   XCTAssert(!movie.overview.isEmpty)
 }
 
