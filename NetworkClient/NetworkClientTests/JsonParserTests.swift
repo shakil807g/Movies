@@ -11,7 +11,7 @@ import XCTest
 
 final class JsonParserTests: XCTestCase {
 
-func testParse() throws {
+func testParseMoviesResponse() {
   let data = """
 {
     "page": 1,
@@ -42,16 +42,80 @@ func testParse() throws {
 """.data(using: .utf8)!
   
   let sut = JsonParser()
-  let moviesResponse: MoviesResponse = try sut.parse(data)
-  XCTAssertTrue(!moviesResponse.results.isEmpty)
-  let movie = moviesResponse.results.first!
-  XCTAssertNotNil(movie.poster)
-  XCTAssertTrue(!movie.poster!.isEmpty)
-  XCTAssert(movie.id == 419704)
-  XCTAssertNotNil(movie.backdrop)
-  XCTAssertTrue(!movie.backdrop!.isEmpty)
-  XCTAssert(movie.title == "Ad Astra")
-  XCTAssert(!movie.overview.isEmpty)
+  do {
+    let moviesResponse: MoviesResponse = try sut.parse(data)
+    XCTAssertTrue(!moviesResponse.results.isEmpty)
+    let movie = moviesResponse.results.first!
+    XCTAssertNotNil(movie.poster)
+    XCTAssertTrue(!movie.poster!.isEmpty)
+    XCTAssert(movie.id == 419704)
+    XCTAssertNotNil(movie.backdrop)
+    XCTAssertTrue(!movie.backdrop!.isEmpty)
+    XCTAssert(movie.title == "Ad Astra")
+    XCTAssert(!movie.overview.isEmpty)
+  } catch {
+    XCTAssert(false, "\(error)")
+  }
+}
+func testParseConfiguration() {
+  let data =
+"""
+{
+    "images": {
+        "base_url": "http://image.tmdb.org/t/p/",
+        "secure_base_url": "https://image.tmdb.org/t/p/",
+        "backdrop_sizes": [
+            "w300",
+            "w780",
+            "w1280",
+            "original"
+        ],
+        "logo_sizes": [
+            "w45",
+            "w92",
+            "w154",
+            "w185",
+            "w300",
+            "w500",
+            "original"
+        ],
+        "poster_sizes": [
+            "w92",
+            "w154",
+            "w185",
+            "w342",
+            "w500",
+            "w780",
+            "original"
+        ],
+        "profile_sizes": [
+            "w45",
+            "w185",
+            "h632",
+            "original"
+        ],
+        "still_sizes": [
+            "w92",
+            "w185",
+            "w300",
+            "original"
+        ]
+    }
+}
+""".data(using: .utf8)!
+  
+  let sut = JsonParser()
+  do {
+    let configuration: Configuration = try sut.parse(data)
+    XCTAssert(!configuration.images.backdropSizes.isEmpty)
+    XCTAssert(!configuration.images.backdropSizes[0].isEmpty)
+    XCTAssert(!configuration.images.posterSizes.isEmpty)
+    XCTAssert(!configuration.images.posterSizes[0].isEmpty)
+    XCTAssert(!configuration.images.secureBaseUrl.isEmpty)
+  } catch {
+    XCTAssert(false, "\(error)")
+  }
+  
 }
 
 }
