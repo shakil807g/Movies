@@ -32,6 +32,7 @@ func getImageData(for movieItem: MovieItem, completion: @escaping(Result<Data, E
   let task = session.dataTask(with: URLRequest(url: url)) { data, response, error in
     if let error = error {
       completion(.failure(error))
+      return
     }
     guard let data = data else {
       completion(.failure(NetworkClientError.noData))
