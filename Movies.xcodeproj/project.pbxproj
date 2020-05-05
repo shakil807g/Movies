@@ -54,6 +54,7 @@
 		20F7188B2460710900D6B618 /* MoviesListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7188A2460710900D6B618 /* MoviesListBuilderTests.swift */; };
 		20F7188E2460720800D6B618 /* NetworkInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7188D2460720800D6B618 /* NetworkInteractorTests.swift */; };
 		20F71890246086C500D6B618 /* PersistenceInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7188F246086C500D6B618 /* PersistenceInteractorTests.swift */; };
+		20FBF7B12461216D00730B2C /* MoviesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBF7B02461216D00730B2C /* MoviesListPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		20F7188A2460710900D6B618 /* MoviesListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListBuilderTests.swift; sourceTree = "<group>"; };
 		20F7188D2460720800D6B618 /* NetworkInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInteractorTests.swift; sourceTree = "<group>"; };
 		20F7188F246086C500D6B618 /* PersistenceInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceInteractorTests.swift; sourceTree = "<group>"; };
+		20FBF7B02461216D00730B2C /* MoviesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,8 +492,9 @@
 		20F71886246070EA00D6B618 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				20F7188C246071FC00D6B618 /* Interactor */,
 				20F71889246070F300D6B618 /* Builder */,
+				20F7188C246071FC00D6B618 /* Interactor */,
+				20FBF7AD2461122400730B2C /* Presenter */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -511,6 +514,14 @@
 				20F7188F246086C500D6B618 /* PersistenceInteractorTests.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		20FBF7AD2461122400730B2C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20FBF7B02461216D00730B2C /* MoviesListPresenterTests.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -710,6 +721,7 @@
 				20F7188B2460710900D6B618 /* MoviesListBuilderTests.swift in Sources */,
 				208C2E8624587C2D006AA6CF /* MoviesTests.swift in Sources */,
 				205FCE0524602DF40025108C /* MovieDetailInteractorTests.swift in Sources */,
+				20FBF7B12461216D00730B2C /* MoviesListPresenterTests.swift in Sources */,
 				205FCE0D246035840025108C /* MovieDetailPresenterTests.swift in Sources */,
 				20F7188E2460720800D6B618 /* NetworkInteractorTests.swift in Sources */,
 				205FCE01246029E30025108C /* MovieDetailBuilderTests.swift in Sources */,
