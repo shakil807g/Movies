@@ -53,6 +53,7 @@
 		20F374AF245D510800F83E95 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F374AE245D510800F83E95 /* MovieTableViewCell.swift */; };
 		20F7188B2460710900D6B618 /* MoviesListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7188A2460710900D6B618 /* MoviesListBuilderTests.swift */; };
 		20F7188E2460720800D6B618 /* NetworkInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7188D2460720800D6B618 /* NetworkInteractorTests.swift */; };
+		20F71890246086C500D6B618 /* PersistenceInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F7188F246086C500D6B618 /* PersistenceInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		20F374AE245D510800F83E95 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		20F7188A2460710900D6B618 /* MoviesListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListBuilderTests.swift; sourceTree = "<group>"; };
 		20F7188D2460720800D6B618 /* NetworkInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInteractorTests.swift; sourceTree = "<group>"; };
+		20F7188F246086C500D6B618 /* PersistenceInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				20F7188D2460720800D6B618 /* NetworkInteractorTests.swift */,
+				20F7188F246086C500D6B618 /* PersistenceInteractorTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F71890246086C500D6B618 /* PersistenceInteractorTests.swift in Sources */,
 				20F7188B2460710900D6B618 /* MoviesListBuilderTests.swift in Sources */,
 				208C2E8624587C2D006AA6CF /* MoviesTests.swift in Sources */,
 				205FCE0524602DF40025108C /* MovieDetailInteractorTests.swift in Sources */,
