@@ -42,6 +42,7 @@ func showMovie(movie: Movie) {
     guard let data = data,
       let image = UIImage(data: data) else { return }
     DispatchQueue.main.async {
+      self.bannerImageView.contentMode = .scaleAspectFill
       self.bannerImageView.image = image
     }
   }

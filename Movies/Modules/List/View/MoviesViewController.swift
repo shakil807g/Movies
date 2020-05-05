@@ -90,6 +90,7 @@ private func configure(movieCell: MovieTableViewCell, movie: Movie, indexPath: I
       let image = UIImage(data: data) else { return }
     DispatchQueue.main.async {
       if self.tableView?.indexPath(for: movieCell) == indexPath {
+        movieCell.bannerImageView.contentMode = .scaleAspectFill
         movieCell.bannerImageView.image = image
       }
     }
