@@ -4,7 +4,7 @@ An iOS app that fetches movies from themoviedb.org for three different categorie
 Below are few screen shots of working of app
 
 ![](1.jpg)
-Left image shows the initial loading state when app is first launched. Right image shows list of movies. Please note that few images are loaded and few images are waiting for their data to be recived from network.
+Left image shows the initial loading state when app is first launched. Right image shows list of movies. Please note that few images are loaded and few images are waiting for their data to be received from network.
 
 ![](2.jpg)
 Left image shows the state when all the images of currently visible movies are loaded successfully. Right image shows the movie detail screen.
