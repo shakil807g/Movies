@@ -14,10 +14,7 @@ case getPopular
 case getTopRated
 case getUpComing
 }
-//https://api.themoviedb.org/3/configuration?api_key=52d78a6d4567271b1e33f4b97134ee11
-//https://api.themoviedb.org/3/movie/popular?api_key=52d78a6d4567271b1e33f4b97134ee11&language=en-US&page=1
-//https://api.themoviedb.org/3/movie/top_rated?api_key=52d78a6d4567271b1e33f4b97134ee11&language=en-US&page=1
-//https://api.themoviedb.org/3/movie/upcoming?api_key=52d78a6d4567271b1e33f4b97134ee11&language=en-US&page=1
+
 private let baseUrlString = "https://api.themoviedb.org/3/"
 private let apiKey = "52d78a6d4567271b1e33f4b97134ee11"
 extension Router {
